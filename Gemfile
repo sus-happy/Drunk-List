@@ -51,3 +51,5 @@ group :development do
   gem 'spring'
 end
 
+# Auth
+gem 'sorcery'

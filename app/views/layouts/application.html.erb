@@ -2,13 +2,63 @@
 <html>
 <head>
   <title>DrunkLists</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="stylesheet" type="text/css" href="http://fastly.ink.sapo.pt/3.1.10/css/ink.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <script type="text/javascript" src="http://fastly.ink.sapo.pt/3.1.10/js/ink-all.js"></script>
+  <script type="text/javascript" src="http://fastly.ink.sapo.pt/3.1.10/js/autoload.js"></script>
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <% # javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="ink-drawer">
 
-<%= yield %>
+  <% if current_user %>
+  <div id="drawer" class="right-drawer">
+    <nav class="ink-navigation">
+      <ul class="menu vertical black">
+          <li><%= link_to "Beers", beers_path %></li>
+          <li><%= link_to "Users", users_path %></li>
+          <li><%= link_to "Edit Profile", edit_user_path(current_user.id) %></li>
+          <li><%= link_to "Logout", :logout, method: :post %></li>
+      </ul>
+    </nav>
+  </div>
+  <% end %>
+
+  <div id="main-content" class="content-drawer">
+
+    <nav class="ink-navigation">
+      <ul class="menu horizontal black">
+          <li class="heading"><a href="/">Drunk List</a></li>
+          <% if current_user %>
+          <li class="menu"><a class="right-drawer-trigger" href="#"><i class="fa fa-bars"></i></a></li>
+          <% end %>
+      </ul>
+    </nav>
+
+    <div class="ink-grid">
+
+      <% if flash[:notice] %>
+        <div class="ink-alert basic info" role="alert">
+          <button class="ink-dismiss">&times;</button>
+          <p><%= flash[:notice] %></p>
+        </div>
+      <% end %>
+      <% if flash[:alert] %>
+        <div class="ink-alert basic error" role="alert">
+          <button class="ink-dismiss">&times;</button>
+          <p><%= flash[:alert] %></p>
+        </div>
+      <% end %>
+
+      <%= yield %>
+    </div>
+
+  </div>
 
 </body>
 </html>

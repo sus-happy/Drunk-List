@@ -13,3 +13,32 @@
  *= require_tree .
  *= require_self
  */
+
+#drawer {
+    background: #1a1a1a;
+}
+
+.ink-form .ink-button-bar {
+    display: block;
+    margin: 0;
+    width: 100%;
+}
+
+.ink-navigation {
+    ul.menu {
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+        border-radius: 0;
+        li.menu {
+            float:right;
+        }
+    }
+}
+
+#main-content {
+    h1 {
+        margin-top: 20px;
+    }
+}

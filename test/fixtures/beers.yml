@@ -3,7 +3,19 @@
 one:
   name: MyString
   price: 1
+  sweet: 1
+  bitter: 1
+  sour: 1
+  smell: 1
+  alcohol: 1.5
+  memo: MyText
 
 two:
   name: MyString
   price: 1
+  sweet: 1
+  bitter: 1
+  sour: 1
+  smell: 1
+  alcohol: 1.5
+  memo: MyText

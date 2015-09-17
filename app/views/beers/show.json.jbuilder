@@ -1,1 +1,1 @@
-json.extract! @beer, :id, :name, :price, :created_at, :updated_at
+json.extract! @beer, :id, :name, :price, :sweet, :bitter, :sour, :smell, :alcohol, :memo, :created_at, :updated_at
