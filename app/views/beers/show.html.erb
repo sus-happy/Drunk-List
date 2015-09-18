@@ -34,7 +34,7 @@
 </div>
 <script>
 var alchol = <%= @beer.alcohol %>;
-alchol = ( alchol/15 ) * 5;
+alchol = Math.round( ( alchol/15 ) * 500 ) / 100;
 
 var data = {
     labels: ["Sweet", "Bitter", "Sour", "Smell", "Alchol"],
@@ -52,7 +52,12 @@ var data = {
     ]
 };
 var ctx = document.getElementById("chart").getContext("2d");
-var myNewChart = new Chart(ctx).Radar(data);
+var myNewChart = new Chart(ctx).Radar( data, {
+  scaleOverride : true,
+  scaleSteps : 5,
+  scaleStepWidth : 1,
+  scaleStartValue : 0
+} );
 </script>
 
 <%= link_to @beer.counters.count.to_s + ' Drunk', edit_counter_path(@beer), :class=>'ink-button ink-button-bar green' %>
