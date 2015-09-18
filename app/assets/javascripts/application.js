@@ -14,3 +14,18 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+( function() {
+
+    $( function() {
+        $('.star-check').each( function() {
+            var $parent = $(this);
+            var $child  = $parent.find('li');
+            $(this).find( 'input' ).change( function() {
+                $child.removeClass( 'on' );
+                $(this).closest('li').prevAll('li').addClass( 'on' );
+            } ).filter(':checked').trigger( 'change' );
+        } );
+    } );
+
+} )( jQuery );

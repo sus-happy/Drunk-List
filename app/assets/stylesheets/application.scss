@@ -18,10 +18,16 @@
     background: #1a1a1a;
 }
 
-.ink-form .ink-button-bar {
+.ink-button-bar {
     display: block;
     margin: 0;
     width: 100%;
+}
+.ink-button-bar+.ink-button-bar {
+    margin: 1em 0 0;
+}
+.ink-form .ink-button-bar {
+    margin: 0;
 }
 
 .ink-navigation {
@@ -38,7 +44,50 @@
 }
 
 #main-content {
+    padding-bottom: 20px;
     h1 {
         margin-top: 20px;
+    }
+    .star-check {
+        padding: 0;
+        margin: 0;
+        li {
+            text-align: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            label {
+                position: relative;
+                overflow: hidden;
+                width: 32px;
+                height: 32px;
+                display: inline-block;
+            }
+            input {
+                border: none;
+                background: none;
+                position: absolute;
+                left: -1000px;
+                outline: none;
+                &::before {
+                    color: #ccc;
+                    position: absolute;
+                    left: 1000px;
+                    width: 32px;
+                    text-align: center;
+                    line-height: 32px;
+                    display: inline-block;
+                    font-size: 32px;
+                    font-family: 'FontAwesome';
+                    content: '\f005';
+                }
+                &:checked::before {
+                    color:#F7CC20;
+                }
+            }
+            &.on input::before {
+                color:#F7CC20;
+            }
+        }
     }
 }
