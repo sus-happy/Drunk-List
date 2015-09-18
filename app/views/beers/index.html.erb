@@ -13,7 +13,7 @@
 <table id="beers" class="ink-table alternating">
   <thead>
     <tr>
-      <th class="align-left">Name</th>
+      <th class="align-left">Name /<br>Country</th>
       <th class="align-left meta">Price /<br>Alcohol</th>
       <th class="align-left meta"></th>
     </tr>
@@ -22,7 +22,7 @@
   <tbody>
     <% @beers.each do |beer| %>
       <tr>
-        <td><%= link_to beer.name, beer %></td>
+        <td><%= link_to beer.name, beer %><br><%= beer.country %></td>
         <td class="meta">&yen;<%= beer.price %><br><%= beer.alcohol %>%</td>
         <td class="meta"><span class="count"><%= beer.counters.count %></span></td>
       </tr>
