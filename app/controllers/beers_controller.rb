@@ -1,4 +1,5 @@
 class BeersController < ApplicationController
+  skip_before_filter :require_login, only: [:index, :show]
   before_action :set_beer, only: [:show, :edit, :update, :destroy]
 
   # GET /beers

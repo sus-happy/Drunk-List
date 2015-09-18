@@ -69,7 +69,9 @@ var myNewChart = new Chart(ctx).Radar( data, {
 } );
 </script>
 
+<% if current_user %>
 <%= link_to @beer.counters.count.to_s + ' Drunk', edit_counter_path(@beer), :class=>'ink-button ink-button-bar green' %>
 <%= link_to 'Edit', edit_beer_path(@beer), :class=>'ink-button ink-button-bar blue' %>
 <%= link_to 'Delete', @beer, method: :delete, data: { confirm: 'Are you sure?' }, :class=>'ink-button ink-button-bar red' %>
+<% end %>
 <%= link_to 'Back', beers_path, :class=>'ink-button ink-button-bar' %>

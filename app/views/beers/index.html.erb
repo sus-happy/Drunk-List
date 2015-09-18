@@ -1,5 +1,7 @@
 <h1>Beers</h1>
+<% if current_user %>
 <p class="right-btn"><%= link_to 'New Beer', new_beer_path, :class => 'ink-button blue' %></p>
+<% end %>
 
 <div class="ink-form">
   <div class="control-group">

@@ -16,27 +16,27 @@
 </head>
 <body class="ink-drawer">
 
-  <% if current_user %>
   <div id="drawer" class="right-drawer">
     <nav class="ink-navigation">
       <ul class="menu vertical black">
           <li><%= link_to "Beers", beers_path %></li>
+          <% if current_user %>
           <li><%= link_to "Users", users_path %></li>
           <li><%= link_to "Edit Profile", edit_user_path(current_user.id) %></li>
-          <li><%= link_to "Logout", :logout, method: :post %></li>
+          <li><%= link_to "Signout", :logout, method: :get %></li>
+          <% else %>
+          <li><%= link_to "Signin", :login, method: :get %></li>
+          <% end %>
       </ul>
     </nav>
   </div>
-  <% end %>
 
   <div id="main-content" class="content-drawer">
 
     <nav class="ink-navigation">
       <ul class="menu horizontal black">
           <li class="heading"><a href="/">Drunk List</a></li>
-          <% if current_user %>
           <li class="menu"><a class="right-drawer-trigger" href="#"><i class="fa fa-bars"></i></a></li>
-          <% end %>
       </ul>
     </nav>
 
