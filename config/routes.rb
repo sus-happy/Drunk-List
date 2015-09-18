@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   resources :users
   resources :user_sessions
   resources :beers
+  resources :counters
   root :to => 'beers#index'
+
 
   get 'login' => 'user_sessions#new', :as => :login
   get 'logout' => 'user_sessions#destroy', :as => :logout

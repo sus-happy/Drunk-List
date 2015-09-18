@@ -36,6 +36,5 @@ $(document).on 'ready page:load', ->
                     return
                 .filter ':checked'
                 .trigger 'change'
-            console.log 'douyo'
             return
   return

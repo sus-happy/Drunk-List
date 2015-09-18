@@ -43,6 +43,13 @@
     }
 }
 
+.ink-table {
+    .meta {
+        width: 1em;
+        white-space: nowrap;
+    }
+}
+
 #main-content {
     padding-bottom: 20px;
     h1 {
@@ -93,7 +100,11 @@
 }
 
 .control-value {
+    font-size: 1.4em;
+}
+.control-value-long {
     font-size: 1.2em;
+    line-height: 1.6;
 }
 
 .chart-wrap {
@@ -102,4 +113,23 @@
 #chart {
     margin: 0 auto;
     width: 320px;
+}
+
+.right-btn {
+    text-align: right;
+    margin-top: -45px;
+}
+
+.count {
+    display: inline-block;
+    white-space: nowrap;
+    background: #c91111;
+    color:#fff;
+    line-height: 22px;
+    padding: 0 7px;
+    -webkit-border-radius: 11px;
+    -moz-border-radius: 11px;
+    -ms-border-radius: 11px;
+    -o-border-radius: 11px;
+    border-radius: 11px;
 }

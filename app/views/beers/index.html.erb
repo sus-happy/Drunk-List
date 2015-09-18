@@ -1,27 +1,33 @@
 <h1>Beers</h1>
+<p class="right-btn"><%= link_to 'New Beer', new_beer_path, :class => 'ink-button blue' %></p>
 
-<table class="ink-table alternating">
+<div class="ink-form">
+  <div class="control-group">
+    <label for="s">Search</label>
+    <div class="control">
+      <%= search_field_tag 's' %>
+    </div>
+  </div>
+</div>
+
+<table id="beers" class="ink-table alternating">
   <thead>
     <tr>
       <th class="align-left">Name</th>
-      <th class="align-left">Price</th>
-      <th class="align-left">Alcohol</th>
-      <th></th>
+      <th class="align-left meta">Price /<br>Alcohol</th>
+      <th class="align-left meta"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @beers.each do |beer| %>
       <tr>
-        <td><%= beer.name %></td>
-        <td><%= beer.price %></td>
-        <td><%= beer.alcohol %></td>
-        <td><%= link_to 'Show', beer %></td>
+        <td><%= link_to beer.name, beer %></td>
+        <td class="meta">&yen;<%= beer.price %><br><%= beer.alcohol %>%</td>
+        <td class="meta"><span class="count"><%= beer.counters.count %></span></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Beer', new_beer_path %>

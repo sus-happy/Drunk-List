@@ -1,7 +1,5 @@
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+<h1><%= @user.email %></h1>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Edit', edit_user_path(@user), :class=>'ink-button ink-button-bar blue' %>
+<%= link_to 'Delete', @user, method: :delete, data: { confirm: 'Are you sure?' }, :class=>'ink-button ink-button-bar red' %>
+<%= link_to 'Back', users_path, :class=>'ink-button ink-button-bar' %>

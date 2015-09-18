@@ -1,23 +1,29 @@
 <h1><%= @beer.name %></h1>
 
 <div class="ink-form">
-  <div class="control-group">
-    <label>Price:</label>
-    <div class="control control-value">
-      <%= @beer.price %>
+  <div class="column-group">
+    <div class="all-50">
+      <div class="control-group">
+        <label>Price:</label>
+        <div class="control control-value">
+          &yen;<%= @beer.price %>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <div class="control-group">
-    <label>Alcohol:</label>
-    <div class="control control-value">
-      <%= @beer.alcohol %>
+    <div class="all-50">
+      <div class="control-group">
+        <label>Alcohol:</label>
+        <div class="control control-value">
+          <%= @beer.alcohol %>%
+        </div>
+      </div>
     </div>
   </div>
 
   <div class="control-group">
     <label>Memo:</label>
-    <div class="control control-value">
+    <div class="control control-value-long">
       <%= hbr @beer.memo %>
     </div>
   </div>
@@ -49,6 +55,7 @@ var ctx = document.getElementById("chart").getContext("2d");
 var myNewChart = new Chart(ctx).Radar(data);
 </script>
 
+<%= link_to @beer.counters.count.to_s + ' Drunk', edit_counter_path(@beer), :class=>'ink-button ink-button-bar green' %>
 <%= link_to 'Edit', edit_beer_path(@beer), :class=>'ink-button ink-button-bar blue' %>
 <%= link_to 'Delete', @beer, method: :delete, data: { confirm: 'Are you sure?' }, :class=>'ink-button ink-button-bar red' %>
 <%= link_to 'Back', beers_path, :class=>'ink-button ink-button-bar' %>
