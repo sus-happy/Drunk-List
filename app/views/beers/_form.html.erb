@@ -17,6 +17,14 @@
       <%= f.text_field :name %>
     </div>
   </div>
+
+  <div class="control-group">
+    <%= f.label :image %>
+    <div class="control">
+      <%= f.file_field :image, accept: "image/jpeg" %>
+    </div>
+  </div>
+
   <div class="control-group">
     <%= f.label :country %>
     <div class="control">

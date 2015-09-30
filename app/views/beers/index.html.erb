@@ -15,6 +15,7 @@
 <table id="beers" class="ink-table alternating">
   <thead>
     <tr>
+      <th></th>
       <th class="align-left">Name /<br>Country</th>
       <th class="align-left meta">Price /<br>Alcohol</th>
       <th class="align-left meta"></th>
@@ -24,6 +25,11 @@
   <tbody>
     <% @beers.each do |beer| %>
       <tr>
+        <td class="image">
+          <% if beer.image %>
+          <img src="data:image/jpeg;base64,<%= [beer.image].pack('m') %>">
+          <% end %>
+        </td>
         <td><%= link_to beer.name, beer %><br><%= beer.country %></td>
         <td class="meta">&yen;<%= beer.price %><br><%= beer.alcohol %>%</td>
         <td class="meta"><span class="count"><%= beer.counters.count %></span></td>

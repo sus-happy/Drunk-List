@@ -57,3 +57,7 @@ gem 'sorcery'
 group :production do
   gem 'unicorn'
 end
+
+# Image
+# gem 'rmagick', require: 'RMagick'
+gem 'rmagick'

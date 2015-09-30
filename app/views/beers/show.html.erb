@@ -1,5 +1,9 @@
 <h1><%= @beer.name %></h1>
 
+<% if @beer.image %>
+<p class="image"><img src="data:image/jpeg;base64,<%= [@beer.image].pack('m') %>"></p>
+<% end %>
+
 <div class="ink-form">
   <div class="column-group">
     <div class="all-33">
