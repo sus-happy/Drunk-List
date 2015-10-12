@@ -154,3 +154,19 @@
         height: auto;
     }
 }
+
+.comment-area {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 1em 0 1px;
+    margin-bottom: 1.5em;
+
+    .comment-space + .comment-space {
+        border-top: 1px dotted #ccc;
+        padding-top: 1.5em;
+    }
+}
+
+.large-half-horizontal-gutters {
+    margin-bottom: 10px;
+}

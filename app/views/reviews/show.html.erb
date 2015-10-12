@@ -51,7 +51,7 @@ var data = {
             pointStrokeColor: "#fff",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(220,220,220,1)",
-            data: [<%= @review_param[:sweet] %>, <%= @review_param[:bitter] %>, <%= @review_param[:sour] %>, <%= @review_param[:smell] %>, alchol]
+            data: [<%= @beer.sweet %>, <%= @beer.bitter %>, <%= @beer.sour %>, <%= @beer.smell %>, alchol]
         }
     ]
 };
@@ -64,25 +64,9 @@ var myNewChart = new Chart(ctx).Radar( data, {
 } );
 </script>
 
-<div class="comment-area">
-  <h2>Comment</h2>
-  <% @beer.reviews.each do |review| %>
-  <div class="comment-space vertical-space">
-    <p><span class="ink-label orange"><%= review.user.name %></span><br>
-      <%= hbr review.comment %></p>
-  </div>
-  <% end %>
-</div>
-
 <% if current_user %>
-
-<div class="column-group large-half-horizontal-gutters">
-  <div class="all-50"><%= link_to @beer.counters.count.to_s + ' Drunk', edit_counter_path(@beer), :class=>'ink-button ink-button-bar green' %></div>
-  <div class="all-50"><%= link_to @review_num.to_s + ' Review', edit_review_path(@beer), :class=>'ink-button ink-button-bar orange' %></div>
-</div>
-<div class="column-group large-half-horizontal-gutters">
-  <div class="all-50"><%= link_to 'Edit', edit_beer_path(@beer), :class=>'ink-button ink-button-bar blue' %></div>
-  <div class="all-50"><%= link_to 'Delete', @beer, method: :delete, data: { confirm: 'Are you sure?' }, :class=>'ink-button ink-button-bar red' %></div>
-</div>
+<%= link_to @beer.counters.count.to_s + ' Drunk', edit_counter_path(@beer), :class=>'ink-button ink-button-bar green' %>
+<%= link_to 'Edit', edit_beer_path(@beer), :class=>'ink-button ink-button-bar blue' %>
+<%= link_to 'Delete', @beer, method: :delete, data: { confirm: 'Are you sure?' }, :class=>'ink-button ink-button-bar red' %>
 <% end %>
 <%= link_to 'Back', beers_path, :class=>'ink-button ink-button-bar' %>

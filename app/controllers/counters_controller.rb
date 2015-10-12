@@ -3,7 +3,7 @@ class CountersController < ApplicationController
 
   # GET /counters/1/edit
   def edit
-    @counter = Counter.new(:beer_id => params['id'])
+    @counter = Counter.new( { :beer_id => params['id'], :user_id => current_user.id } )
 
     respond_to do |format|
       if @counter.save

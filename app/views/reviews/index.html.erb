@@ -30,13 +30,8 @@
           <img src="data:image/jpeg;base64,<%= [beer.thumb].pack('m') %>">
           <% end %>
         </td>
-        <td colspan="2">
-          <%= link_to beer.name, beer %>
-          <div class="column-group small">
-            <div class="all-50"><%= beer.country %></div>
-            <div class="all-50 align-right"><%= beer.alcohol %>%</div>
-          </div>
-        </td>
+        <td><%= link_to beer.name, beer %><br><%= beer.country %></td>
+        <td class="meta"><%= beer.alcohol %>%</td>
         <td class="meta"><span class="count"><%= beer.counters.count %></span></td>
       </tr>
     <% end %>

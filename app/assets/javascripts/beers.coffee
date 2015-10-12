@@ -13,7 +13,7 @@ $(document).on 'ready page:load', ->
                 .each (event) ->
                     name = $ this
                                 .find 'td'
-                                .eq 0
+                                .eq 1
                                 .text()
                     if !name.match reg
                         $ this

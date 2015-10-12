@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sweet: 1
+  bitter: 1
+  sour: 1
+  smell: 1
+
+two:
+  sweet: 1
+  bitter: 1
+  sour: 1
+  smell: 1

@@ -3,8 +3,11 @@ Rails.application.routes.draw do
   resources :user_sessions
   resources :beers
   resources :counters
+  resources :reviews
   root :to => 'beers#index'
 
+  get 'beers/:id/image' => 'beers#image'
+  get 'beers/:id/thumb' => 'beers#thumb'
 
   get 'login' => 'user_sessions#new', :as => :login
   get 'logout' => 'user_sessions#destroy', :as => :logout
